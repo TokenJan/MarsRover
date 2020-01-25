@@ -57,4 +57,31 @@ public class MarsRoverTest {
         assert 10L == (actualStatus.getY());
         assert direction.equals(actualStatus.getDirection());
     }
+
+    @Test
+    public void should_return_position_and_direction_after_initiation_and_move_command_and_turn_direction_command() {
+
+        // given:
+        Long x = 3L;
+        Long y = 5L;
+        Direction direction = Direction.NORTH;
+        RoverStatus status = new RoverStatus(x, y, direction);
+        InitalCommand initalCommand = new InitalCommand(status);
+        TurnDirectionCommand turnDirectionCommand = new TurnDirectionCommand("L");
+        MoveCommand moveCommand = new MoveCommand("M", 5);
+
+        List<Command> commands = new ArrayList<>();
+        commands.add(initalCommand);
+        commands.add(turnDirectionCommand);
+        commands.add(moveCommand);
+
+        // when:
+        marsRover.execute(commands);
+
+        // then:
+        RoverStatus actualStatus = marsRover.getStatus();
+        assert -2L == actualStatus.getX();
+        assert y.equals(actualStatus.getY());
+        assert Direction.WEST.equals(actualStatus.getDirection());
+    }
 }

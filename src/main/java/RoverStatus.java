@@ -27,6 +27,10 @@ public class RoverStatus {
         this.y = y;
     }
 
+    public void setDirection(Direction direction) {
+        this.direction = direction;
+    }
+
     public Direction getDirection() {
         return direction;
     }
