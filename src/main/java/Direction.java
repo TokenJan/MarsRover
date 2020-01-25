@@ -2,7 +2,7 @@ public enum Direction {
 
     NORTH("N"),
     SOUTH("S"),
-    WEDT("W"),
+    WEST("W"),
     EAST("E");
 
     private String direction;

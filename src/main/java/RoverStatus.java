@@ -1,22 +1,30 @@
 public class RoverStatus {
-    private String x;
+    private Long x;
 
-    private String y;
+    private Long y;
 
     private Direction direction;
 
-    public RoverStatus(String x, String y, Direction direction) {
+    public RoverStatus(Long x, Long y, Direction direction) {
         this.x = x;
         this.y = y;
         this.direction = direction;
     }
 
-    public String getX() {
+    public Long getX() {
         return x;
     }
 
-    public String getY() {
+    public Long getY() {
         return y;
+    }
+
+    public void setX(Long x) {
+        this.x = x;
+    }
+
+    public void setY(Long y) {
+        this.y = y;
     }
 
     public Direction getDirection() {

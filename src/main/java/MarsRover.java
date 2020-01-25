@@ -1,5 +1,8 @@
 import java.util.List;
 
+/**
+ * @author jiahuan.yang
+ */
 public class MarsRover {
 
     private RoverStatus status;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MarsRoverTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-25T03:20:05" hostname="CNjiahuan.yang" time="7.259">
+<testsuite name="MarsRoverTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-25T13:47:21" hostname="CNjiahuan.yang" time="0.011">
   <properties/>
-  <testcase name="should_return_position_and_direction_after_initiation" classname="MarsRoverTest" time="7.259"/>
+  <testcase name="should_return_position_and_direction_after_initiation_and_move_command" classname="MarsRoverTest" time="0.011"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

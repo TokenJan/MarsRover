@@ -1,3 +1,6 @@
+/**
+ * @author jiahuan.yang
+ */
 public class InitalCommand implements Command {
 
     private RoverStatus status;
