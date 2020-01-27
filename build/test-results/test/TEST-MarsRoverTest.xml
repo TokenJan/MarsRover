@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="MarsRoverTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-01-25T14:34:33" hostname="CNjiahuan.yang" time="0.005">
+<testsuite name="MarsRoverTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-01-27T12:30:09" hostname="CNjiahuan.yang" time="0.004">
   <properties/>
-  <testcase name="should_return_position_and_direction_after_initiation_and_move_command" classname="MarsRoverTest" time="0.004"/>
-  <testcase name="should_return_position_and_direction_after_initiation_and_move_command_and_turn_direction_command" classname="MarsRoverTest" time="0.0"/>
-  <testcase name="should_return_position_and_direction_after_initiation" classname="MarsRoverTest" time="0.0"/>
+  <testcase name="should_return_position_and_direction_after_initiation_and_move_command_and_turn_direction_command2" classname="MarsRoverTest" time="0.004"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

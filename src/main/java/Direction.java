@@ -1,57 +1,34 @@
-public enum Direction implements IDirection {
+/**
+ * @author jiahuan.yang
+ */
 
-    EAST("E") {
-        @Override
-        public Direction getPrevious() {
-            return NORTH;
-        }
+public enum Direction {
 
-        @Override
-        public Direction getNext() {
-            return SOUTH;
-        }
-    },
-    SOUTH("S") {
-        @Override
-        public Direction getPrevious() {
-            return EAST;
-        }
+    // 东
+    EAST(0),
 
-        @Override
-        public Direction getNext() {
-            return WEST;
-        }
-    },
-    WEST("W") {
-        @Override
-        public Direction getPrevious() {
-            return SOUTH;
-        }
+    // 南
+    SOUTH(1),
 
-        @Override
-        public Direction getNext() {
-            return NORTH;
-        }
-    },
-    NORTH("N") {
-        @Override
-        public Direction getPrevious() {
-            return WEST;
-        }
+    // 西
+    WEST(2),
 
-        @Override
-        public Direction getNext() {
-            return EAST;
-        }
-    };
+    // 北
+    NORTH(3);
 
-    private String direction;
+    private int index;
 
-    Direction(String direction) {
-        this.direction = direction;
+    Direction(int index) {
+        this.index = index;
     }
 
-    public String getDirection() {
-        return direction;
+    public Direction getPrevious() {
+        int previousIndex = (this.index - 1) % 4;
+        return Direction.values()[previousIndex];
+    }
+
+    public Direction getNext() {
+        int nextIndex = (this.index + 1) % 4;
+        return Direction.values()[nextIndex];
     }
 }

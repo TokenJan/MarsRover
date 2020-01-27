@@ -43,7 +43,7 @@ public class MarsRoverTest {
         Direction direction = Direction.NORTH;
         RoverStatus status = new RoverStatus(x, y, direction);
         InitalCommand initalCommand = new InitalCommand(status);
-        MoveCommand moveCommand = new MoveCommand("M", 5);
+        MoveCommand moveCommand = new MoveCommand(5);
         List<Command> commands = new ArrayList<>();
         commands.add(initalCommand);
         commands.add(moveCommand);
@@ -67,12 +67,12 @@ public class MarsRoverTest {
         Direction direction = Direction.NORTH;
         RoverStatus status = new RoverStatus(x, y, direction);
         InitalCommand initalCommand = new InitalCommand(status);
-        TurnDirectionCommand turnDirectionCommand = new TurnDirectionCommand("L");
-        MoveCommand moveCommand = new MoveCommand("M", 5);
+        TurnLeftCommand turnLeftCommand = new TurnLeftCommand();
+        MoveCommand moveCommand = new MoveCommand(5);
 
         List<Command> commands = new ArrayList<>();
         commands.add(initalCommand);
-        commands.add(turnDirectionCommand);
+        commands.add(turnLeftCommand);
         commands.add(moveCommand);
 
         // when:
@@ -83,5 +83,32 @@ public class MarsRoverTest {
         assert -2L == actualStatus.getX();
         assert y.equals(actualStatus.getY());
         assert Direction.WEST.equals(actualStatus.getDirection());
+    }
+
+    @Test
+    public void should_return_position_and_direction_after_initiation_and_move_command_and_turn_direction_command2() {
+
+        // given:
+        Long x = 3L;
+        Long y = 5L;
+        Direction direction = Direction.NORTH;
+        RoverStatus status = new RoverStatus(x, y, direction);
+        InitalCommand initalCommand = new InitalCommand(status);
+        TurnRightCommand turnRightCommand = new TurnRightCommand();
+        MoveCommand moveCommand = new MoveCommand(5);
+
+        List<Command> commands = new ArrayList<>();
+        commands.add(initalCommand);
+        commands.add(turnRightCommand);
+        commands.add(moveCommand);
+
+        // when:
+        marsRover.execute(commands);
+
+        // then:
+        RoverStatus actualStatus = marsRover.getStatus();
+        assert 8L == actualStatus.getX();
+        assert y.equals(actualStatus.getY());
+        assert Direction.EAST.equals(actualStatus.getDirection());
     }
 }
