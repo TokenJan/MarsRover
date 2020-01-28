@@ -39,6 +39,23 @@ public class MarsRoverTest {
     }
 
     @Test
+    public void should_y_plus_2_given_face_to_north_and_move_forward() {
+        // given:
+        marsRover = new MarsRover();
+        String initCommand = "0 0 N";
+        String moveCommand = "M M";
+
+        // when:
+        marsRover.initialize(initCommand);
+        marsRover.execute(moveCommand);
+
+        // then:
+        assert marsRover.report().getX() == 0;
+        assert marsRover.report().getY() == 2;
+        assert Direction.NORTH.equals(marsRover.report().getDirection());
+    }
+
+    @Test
     public void should_face_to_south_given_face_to_east_and_turn_right() {
         // given:
         marsRover = new MarsRover();
@@ -70,6 +87,23 @@ public class MarsRoverTest {
         assert marsRover.report().getX() == 0;
         assert marsRover.report().getY() == 0;
         assert Direction.NORTH.equals(marsRover.report().getDirection());
+    }
+
+    @Test
+    public void should_x_plus_2_given_face_to_east_and_move_forward() {
+        // given:
+        marsRover = new MarsRover();
+        String initCommand = "0 0 E";
+        String moveCommand = "M M";
+
+        // when:
+        marsRover.initialize(initCommand);
+        marsRover.execute(moveCommand);
+
+        // then:
+        assert marsRover.report().getX() == 2;
+        assert marsRover.report().getY() == 0;
+        assert Direction.EAST.equals(marsRover.report().getDirection());
     }
 
     @Test
@@ -107,6 +141,23 @@ public class MarsRoverTest {
     }
 
     @Test
+    public void should_y_minus_2_given_face_to_south_and_move_forward() {
+        // given:
+        marsRover = new MarsRover();
+        String initCommand = "0 0 S";
+        String moveCommand = "M M";
+
+        // when:
+        marsRover.initialize(initCommand);
+        marsRover.execute(moveCommand);
+
+        // then:
+        assert marsRover.report().getX() == 0;
+        assert marsRover.report().getY() == -2;
+        assert Direction.SOUTH.equals(marsRover.report().getDirection());
+    }
+
+    @Test
     public void should_face_to_north_given_face_to_west_and_turn_right() {
         // given:
         marsRover = new MarsRover();
@@ -138,5 +189,22 @@ public class MarsRoverTest {
         assert marsRover.report().getX() == 0;
         assert marsRover.report().getY() == 0;
         assert Direction.SOUTH.equals(marsRover.report().getDirection());
+    }
+
+    @Test
+    public void should_x_minus_2_given_face_to_west_and_move_forward() {
+        // given:
+        marsRover = new MarsRover();
+        String initCommand = "0 0 W";
+        String moveCommand = "M M";
+
+        // when:
+        marsRover.initialize(initCommand);
+        marsRover.execute(moveCommand);
+
+        // then:
+        assert marsRover.report().getX() == -2;
+        assert marsRover.report().getY() == 0;
+        assert Direction.WEST.equals(marsRover.report().getDirection());
     }
 }

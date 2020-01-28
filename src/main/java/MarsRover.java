@@ -20,6 +20,7 @@ public class MarsRover {
         Arrays.stream(moveCommand).forEach(cmd -> {
             if ("R".equals(cmd)) {this.execute(new TurnRightCommand());}
             if ("L".equals(cmd)) {this.execute(new TurnLeftCommand());}
+            if ("M".equals(cmd)) {this.execute(new MoveCommand());}
         });
     }
 
